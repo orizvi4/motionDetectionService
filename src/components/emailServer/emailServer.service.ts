@@ -51,7 +51,7 @@ export class EmailServerService {
 
     public static async sendToClient(data: string): Promise<void> {
         const start: number = data.indexOf("Subject:") + 9;
-        const end: number = data.indexOf("Sendor:") - 1;
+        const end: number = data.indexOf("Sendor:") - 2;
         WebsocketService.motionDetected(data.substring(start, end));
     }
 
